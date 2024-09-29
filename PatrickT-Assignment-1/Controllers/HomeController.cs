@@ -6,6 +6,7 @@ namespace PatrickT_Assignment_1.Controllers
 {
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,12 +21,32 @@ namespace PatrickT_Assignment_1.Controllers
 
         public IActionResult AllListings()
         {
-            return View();
+            var equipment = new List<Equipment>
+            {
+                new Equipment {Id  = 1, Description = "Lenovo Thinkpad", Available = true},
+                new Equipment {Id  = 2, Description = "Chromebook", Available = false},
+                new Equipment {Id  = 3, Description = "IPhone", Available = true},
+                new Equipment {Id  = 4, Description = "Google Pixel", Available = true},
+                new Equipment {Id  = 5, Description = "IPad", Available = false},
+                new Equipment {Id  = 6, Description = "IPad Mini", Available = false},
+                new Equipment {Id  = 7, Description = "Raspberry Pi", Available = true},
+            };
+            return View(equipment);
         }
 
         public IActionResult AvailableEquipment()
         {
-            return View();
+            var equipment = new List<Equipment>
+            {
+                new Equipment {Id  = 1, Description = "Laptop", Available = true},
+                new Equipment {Id  = 2, Description = "Laptop", Available = false},
+                new Equipment {Id  = 3, Description = "Laptop", Available = true},
+                new Equipment {Id  = 4, Description = "Laptop", Available = true},
+                new Equipment {Id  = 5, Description = "Laptop", Available = false},
+                new Equipment {Id  = 6, Description = "Laptop", Available = false},
+                new Equipment {Id  = 7, Description = "Laptop", Available = true},
+            };
+            return View(equipment);
         }
 
         public IActionResult RequestForm()

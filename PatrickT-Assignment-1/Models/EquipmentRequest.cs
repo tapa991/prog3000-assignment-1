@@ -8,7 +8,7 @@ namespace PatrickT_Assignment_1.Models
         Professor
     }
 
-    public enum Equipment
+    public enum EquipmentOptions
     {
         Laptop,
         Phone,
@@ -25,7 +25,7 @@ namespace PatrickT_Assignment_1.Models
             Id = _id++;
         }
 
-        public int Id { get; private set; }
+        public int? Id { get; private set; }
 
         [Required(ErrorMessage = "Please enter your name")]
         public string? Name { get; set; }
@@ -36,7 +36,7 @@ namespace PatrickT_Assignment_1.Models
         [RegularExpression(@"^\d{3}-\d{3}-\d{4}$", ErrorMessage = "Phone number must be in the format xxx-xxx-xxxx.")]
         public string? PhoneNumber { get; set; }
         public UserRole Role { get; set; }
-        public Equipment EquipmentType { get; set; }
+        public EquipmentOptions EquipmentType { get; set; }
         [Required(ErrorMessage = "Please enter request details")]
         public string? RequestDetails { get; set; }
         [Required(ErrorMessage = "Please enter the duration")]

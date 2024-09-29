@@ -1,4 +1,5 @@
-﻿﻿@{
+﻿@model IEnumerable<PatrickT_Assignment_1.Models.Equipment>
+@{
     ViewData["Title"] = "All Listings";
 }
 
@@ -8,4 +9,23 @@
         The purpose of this application is to allow FAST students and professors to request IT equipment.
         This page lists all equipment.
     </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var equipment in Model)
+            {
+                <tr>
+                    <td>@equipment.Id</td>
+                    <td>@equipment.Description</td>
+                    <td>@(equipment.Available ? "Available" : "Not available")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
