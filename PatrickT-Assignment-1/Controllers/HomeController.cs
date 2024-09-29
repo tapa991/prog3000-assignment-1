@@ -30,7 +30,6 @@ namespace PatrickT_Assignment_1.Controllers
             var equipment = GetEquipmentList();
             return View(equipment);
         }
-
         public IActionResult RequestForm()
         {
             return View();
@@ -48,6 +47,10 @@ namespace PatrickT_Assignment_1.Controllers
             {
                 return View();
             }
+        }
+        public ViewResult Requests()
+        {
+            return View(Repository.Requests);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

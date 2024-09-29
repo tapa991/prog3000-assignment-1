@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PatrickT_Assignment_1.Models.EquipmentRequest>﻿﻿
+@{
+    ViewData["Title"] = "Requests Page";
+}
+
+<div class="w-50">
+    <h1 class="display-4">Requests</h1>
+    <p>
+        This page allows for admins to view equipment requests.
+    </p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Role</th>
+            <th>Equipment Type</th>
+            <th>Request Details</th>
+            <th>Duration</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (PatrickT_Assignment_1.Models.EquipmentRequest request in Model)
+        {
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.Name</td>
+                <td>@request.Email</td>
+                <td>@request.PhoneNumber</td>
+                <td>@request.Role</td>
+                <td>@request.EquipmentType</td>
+                <td>@request.RequestDetails</td>
+                <td>@request.Duration days</td>
+                <td><button>Accept</button> <button>Deny</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
