@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PatrickT_Assignment_1.Models.EquipmentRequest
+@{
     ViewData["Title"] = "Request Form";
 }
 
@@ -8,4 +9,45 @@
         The purpose of this application is to allow FAST students and professors to request IT equipment.
         This page allows users to request equipment.
     </p>
+
+    <form asp-action="RequestForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name"/>
+        </div>
+        <div>
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email"/>
+        </div>
+        <div>
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" />
+        </div>
+        <div>
+            <label asp-for="Role">Role</label>
+            <select asp-for="Role">
+                <option value="Student">Student</option>
+                <option value="Professor">Professor</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="EquipmentType">Equipment Type</label>
+            <select asp-for="EquipmentType">
+                <option value="Laptop">Laptop</option>
+                <option value="Phone">Phone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Another">Another</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="RequestDetails">Request Details</label>
+            <input asp-for="RequestDetails" />
+        </div>
+        <div>
+            <label asp-for="Duration">Duration (days)</label>
+            <input asp-for="Duration" />
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
 </div>

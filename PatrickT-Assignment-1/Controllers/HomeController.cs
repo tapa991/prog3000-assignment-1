@@ -33,6 +33,20 @@ namespace PatrickT_Assignment_1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ViewResult RequestForm(EquipmentRequest equipmentRequest)
+        {
+            if (ModelState.IsValid)
+            {
+                Repository.AddRequest(equipmentRequest);
+                return View("Confirmation", equipmentRequest);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
