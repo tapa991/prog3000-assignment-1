@@ -26,18 +26,12 @@
         </div>
         <div>
             <label asp-for="Role">Role</label>
-            <select asp-for="Role">
-                <option value="Student">Student</option>
-                <option value="Professor">Professor</option>
+            <select asp-for="Role" asp-items="Html.GetEnumSelectList<UserRole>()">
             </select>
         </div>
         <div>
             <label asp-for="EquipmentType">Equipment Type</label>
-            <select asp-for="EquipmentType">
-                <option value="Laptop">Laptop</option>
-                <option value="Phone">Phone</option>
-                <option value="Tablet">Tablet</option>
-                <option value="Another">Another</option>
+            <select asp-for="EquipmentType" asp-items="Html.GetEnumSelectList<Equipment>()">
             </select>
         </div>
         <div>

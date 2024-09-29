@@ -18,7 +18,7 @@ namespace PatrickT_Assignment_1.Controllers
             return View();
         }
 
-        public IActionResult EquipmentListings()
+        public IActionResult AllListings()
         {
             return View();
         }
