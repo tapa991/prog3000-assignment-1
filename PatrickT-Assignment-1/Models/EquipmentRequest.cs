@@ -18,6 +18,15 @@ namespace PatrickT_Assignment_1.Models
 
     public class EquipmentRequest
     {
+        private static int _id = 1;
+
+        public EquipmentRequest()
+        {
+            Id = _id++;
+        }
+
+        public int Id { get; private set; }
+
         [Required(ErrorMessage = "Please enter your name")]
         public string? Name { get; set; }
         [Required(ErrorMessage = "Please enter your email")]
