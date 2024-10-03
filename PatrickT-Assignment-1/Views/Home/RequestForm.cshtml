@@ -3,7 +3,7 @@
     ViewData["Title"] = "Request Form";
 }
 
-<div class="w-50">
+<div>
     <h1 class="display-4">Request Form</h1>
     <p>
         This page allows users to request equipment.
@@ -11,36 +11,36 @@
 
     <form asp-action="RequestForm" method="post">
         <div asp-validation-summary="All"></div>
-        <div>
-            <label asp-for="Name">Name</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="Name">Name:</label>
             <input asp-for="Name"/>
         </div>
-        <div>
-            <label asp-for="Email">Email</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="Email">Email:</label>
             <input asp-for="Email"/>
         </div>
-        <div>
-            <label asp-for="PhoneNumber">Phone Number</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="PhoneNumber">Phone Number:</label>
             <input asp-for="PhoneNumber" />
         </div>
-        <div>
-            <label asp-for="Role">Role</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="Role">Role:</label>
             <select asp-for="Role" asp-items="Html.GetEnumSelectList<UserRole>()">
             </select>
         </div>
-        <div>
-            <label asp-for="EquipmentType">Equipment Type</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="EquipmentType">Equipment Type:</label>
             <select asp-for="EquipmentType" asp-items="Html.GetEnumSelectList<EquipmentOptions>()">
             </select>
         </div>
-        <div>
-            <label asp-for="RequestDetails">Request Details</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="RequestDetails">Request Details:</label>
             <input asp-for="RequestDetails" />
         </div>
-        <div>
-            <label asp-for="Duration">Duration (days)</label>
+        <div class="mb-2 d-flex">
+            <label class="w-25" asp-for="Duration">Duration (days):</label>
             <input asp-for="Duration" />
         </div>
-        <button type="submit">Submit Request</button>
+        <button class="btn-primary" type="submit">Submit Request</button>
     </form>
 </div>

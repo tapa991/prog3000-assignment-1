@@ -8,7 +8,7 @@
     <p>
         This page lists all equipment.
     </p>
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,7 +19,8 @@
         <tbody>
             @foreach (var equipment in Model)
             {
-                <tr>
+                var rowClass = equipment.Available ? "" : "table-danger"; 
+                <tr class="@rowClass">
                     <td>@equipment.Id</td>
                     <td>@equipment.Description</td>
                     <td>@(equipment.Available ? "Available" : "Not available")</td>
